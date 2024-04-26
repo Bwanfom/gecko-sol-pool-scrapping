@@ -14,7 +14,7 @@ const visitedLinksFile = path.join(__dirname, "visitedLinks.json");
 (async () => {
   let browser;
   browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     userDataDir: "./temp",
   });
   const page = await browser.newPage();
