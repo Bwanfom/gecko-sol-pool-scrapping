@@ -144,6 +144,7 @@ const visitedLinksFile = path.join(__dirname, "visitedLinks.json");
                   });
                   console.log(`token name`, Name);
 
+                  //address
                   (async () => {
                     const href = await page.evaluate(async () => {
                       const xpath =
@@ -159,12 +160,9 @@ const visitedLinksFile = path.join(__dirname, "visitedLinks.json");
                         ? element.getAttribute("href")
                         : null;
                       if (hrefAttribute) {
-                        // Extract the part after "https://solana.fm/address/"
                         return hrefAttribute.split(
                           "https://solana.fm/address/"
                         )[1];
-                        // or
-                        // return hrefAttribute.substring("https://solana.fm/address/".length);
                       } else {
                         return null;
                       }
